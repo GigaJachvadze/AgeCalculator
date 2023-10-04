@@ -24,8 +24,6 @@ function main() {
 
     mainDate.setHours(hour);
 
-    console.log(mainDate);
-
     mainContainer.style.display = 'none';
 
     ageContainer.style.display = 'flex';
@@ -34,14 +32,11 @@ function main() {
 }
 
 function update() {
-    console.log(date)
-    console.log(hour)
-
     currentDate = new Date();
 
     let diffSec = currentDate.getTime() - mainDate.getTime();
 
-    let diffYear = diffSec / 1000 / 60 / 60 / 24 / 365;
+    let diffYear = diffSec / 1000 / 60 / 60 / 24 / 365.242199;
 
     ageContainer.innerHTML = diffYear.toFixed(9) + " Years Old";
 }
